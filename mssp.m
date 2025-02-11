@@ -40,7 +40,7 @@ function [Sigma, Theta] = mssp(x, P, alpha, beta, kappa, n)
 %   Example:
 %
 %     x = [-1; 0.5]; P = [2.5 5; 5 11]; 
-%     figure; hold on; 
+%     figure; hold on; legend; 
 %     npts=100; 
 %     tt = linspace(0, 2*pi, npts);
 %     x1 = cos(tt); x2=sin(tt);
@@ -49,10 +49,10 @@ function [Sigma, Theta] = mssp(x, P, alpha, beta, kappa, n)
 %         [v,d]=eig(P); 
 %         d = i * sqrt(d); 
 %         bp = (v*d*ap) + repmat(x, 1, size(ap,2)); 
-%         plot(bp(1,:), bp(2,:), "k-", 'LineWidth',2);  % [1,2,3] std. dev. ellipse
+%         plot(bp(1,:), bp(2,:), "k-", 'LineWidth',2, "HandleVisibility", "off");  % [1,2,3] std. dev. ellipse
 %     end
 %     [Sigma, Theta] = mssp(x, P, 0.8, 2, 0); % sigma points
-%     scatter(Sigma(:,1), Sigma(:,2), 100, "k", "filled", "Marker", "d");
+%     scatter(Sigma(:,1), Sigma(:,2), 100, "k", "filled", "Marker", "d", "DisplayName", "Merwe Scaled Sigma Points");
 %
 %   References:
 %      R. Van der Merwe "P-Point Kalman Filters for Probabilitic 
