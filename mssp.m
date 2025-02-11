@@ -32,7 +32,7 @@ function [Sigma, Theta] = mssp(x, P, alpha, beta, kappa, n)
 %   [SIGMA, THETA] = MSSP(X,P,ALPHA,BETA,KAPPA,N) returns the Van der Merwe 
 %   scaled sigma points SIGMA and weights THETA for mean X, covariance P, 
 %   spread ALPHA, prior knowledge BETA, secondary scaling KAPPA, and number of 
-%   pts N. 
+%   pts N=2*N+1. 
 %
 %   SIGMA is an N-by-D matrix and THETA is a N-by-2 matrix where THETA(:,1) 
 %   are the mean weights and THETA(:,2) are the covariance weights.
@@ -178,6 +178,8 @@ elseif nargin<7
     else
         if (n < 0)
             error("BadN");
+        else
+            n = 2*n + 1;
         end
     end
 else
