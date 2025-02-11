@@ -1,16 +1,26 @@
 # Merwe Scaled Sigma Points (MSSP)
-The MSSP repository provides MATLAB code for calculating the returns the Van der Merwe scaled sigma points and weights described by a mean $x \in \mathbb{R}^{d\times 1}$, covariance $P \in \mathbb{R}^{d\times d}$, spread parameter $\alpha$, prior knowledge parameter $\beta$, and secondary scaling $\kappa$, as defined in [1]. The sigma points $\{\Sigma}$ <br>
+The MSSP repository provides MATLAB code for calculating the returns the Van der Merwe scaled sigma points and weights described by a mean $x \in \mathbb{R}^{d\times 1}$, covariance $P \in \mathbb{R}^{d\times d}$, spread parameter $\alpha$, prior knowledge parameter $\beta$, and secondary scaling $\kappa$, as defined in [1]. The sigma points { $\Sigma_i$ } and weights { $\theta_i^m, \theta_i^c$ } are calculated as follows:<br>
 
 $$
-\begin{gather}
-    p(\mathbf{x}|\boldsymbol{\mu},\Sigma,\beta) =  A(\beta,d)
-    \exp(-[B(\beta,d)(\mathbf{x}-\boldsymbol{\mu})^T \Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu})]^{\beta}),
-    \\ 
-    \text{where}\quad A(\beta,d)= \Big(\frac{B(\beta,d)}{\pi}\Big)^{\frac{d}{2}}\cdot\frac{\Gamma(\frac{d}{2})\beta}{\Gamma(\frac{d}{2\beta})|\Sigma|^{\frac{1}{2}}}\quad\text{and}\quad B(\beta,d)= \frac{\Gamma(\frac{d+2}{2\beta})}{d\Gamma(\frac{d}{2\beta})}, 
-\end{gather}
+\begin{align}
+   \Sigma\_0 &= x \\
+   \Sigma\_i &= x - {(\sqrt{(\lambda + d)P})}\_i; \quad i=1,\dots,d\\
+   \Sigma\_{i+d} &= x + {(\sqrt{(\lambda + d)P})}\_i; \quad i=1,\dots,d\\
+   \theta_0^m &= \frac{\lambda}{d+\lambda}, \quad \theta_0^c = \theta_0^m + (1-\alpha^2 + \beta); \quad i=0\\
+   \theta_i^m &= \theta_i^c = \frac{1}{2(d+\lambda)}; \quad i=1,2,\dots,2d,
+\end{align}
 $$
 
-When $\beta = 1$, *mvggd.m* becomes *mvnpdf.m*. Please direct any questions to blhanson@ucsd.edu. <br><br>
+where $\lambda = \alpha^2(d + \kappa) - d$, and $0 \leq \alpha \leq 1$, $0 \leq \beta$ and $\kappa$ are tuning parameters. These $2d+1$ can be used to exactly construct the mean $x$ and covariance $P$ in the following way: <br>
+
+$$
+\begin{align}
+    x &= \sum_{i=0}^{2d} \theta_i^m \Sigma_i \\
+    P &= \sum_{i=0}^{2d} \theta_i^c(\Sigma_i - x)(\Sigma_i - x)^T
+\end{align}
+$$
+
+Please direct any questions to blhanson@ucsd.edu. <br><br>
 
 ## References
 [1] R. Van der Merwe "P-Point Kalman Filters for Probabilitic Inference in Dynamic State-Space Models" (Doctoral dissertation)
