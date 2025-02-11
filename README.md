@@ -1,5 +1,5 @@
 # Merwe Scaled Sigma Points (MSSP)
-The MSSP repository provides MATLAB code for calculating the returns the Van der Merwe scaled sigma points and weights described by a mean $x \in \mathbb{R}^{d\times 1}$, covariance $P \in \mathbb{R}^{d\times d}$, spread parameter $\alpha$, prior knowledge parameter $\beta$, and secondary scaling $\kappa$, as defined in [1]. The sigma points { $\Sigma_i$ } and weights { $\theta_i^m, \theta_i^c$ } are calculated as follows:<br>
+The MSSP repository provides MATLAB code for calculating the Van der Merwe scaled sigma points and weights described by a mean $x \in \mathbb{R}^{d\times 1}$, covariance $P \in \mathbb{R}^{d\times d}$, spread parameter $\alpha$, prior knowledge parameter $\beta$, and secondary scaling $\kappa$, as defined in [1]. The sigma points { $\Sigma_i$ } and weights { $\theta_i^m, \theta_i^c$ } are calculated as follows:<br>
 
 $$
 \begin{align}
