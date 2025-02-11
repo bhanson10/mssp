@@ -176,7 +176,7 @@ elseif nargin<7
     if ~isscalar(n)
         error("BadNDimension");
     else
-        if (N < 0)
+        if (n < 0)
             error("BadN");
         end
     end
