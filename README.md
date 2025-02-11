@@ -11,7 +11,7 @@ $$
 \end{align}
 $$
 
-where $\lambda = \alpha^2(d + \kappa) - d$, and $0 \leq \alpha \leq 1$, $0 \leq \beta$ and $\kappa$ are tuning parameters. These $2d+1$ can be used to exactly construct the mean $x$ and covariance $P$ in the following way: <br>
+where $\lambda = \alpha^2(d + \kappa) - d$, and $0 \leq \alpha \leq 1$, $0 \leq \beta$ and $\kappa$ are tuning parameters. These $2d+1$ sigma points and weights can be used to exactly construct the mean $x$ and covariance $P$ in the following way: <br>
 
 $$
 \begin{align}
