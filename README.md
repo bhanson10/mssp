@@ -1,5 +1,5 @@
-# Multivariate Generalized Gaussian Distribution (MVGGD)
-The MVGGD repository provides MATLAB code for calculating the probability density of a *d*-dimensional, Generalized Gaussian Distribution at realization vector $\boldsymbol{x}$ with mean vector $\boldsymbol{\mu}$, covariance matrix $\Sigma$, and shaping parameter $\beta$. The probability density function defined in [1] is:  <br>
+# Merwe Scaled Sigma Points (MSSP)
+The MSSP repository provides MATLAB code for calculating the returns the Van der Merwe scaled sigma points and weights described by a mean $x \in \mathbb{R}^{d\times 1}$, covariance $P \in \mathbb{R}^{d\times d}$, spread parameter $\alpha$, prior knowledge parameter $\beta$, and secondary scaling $\kappa$, as defined in [1]. The sigma points $\{\Sigma}$ <br>
 
 $$
 \begin{gather}
@@ -13,6 +13,6 @@ $$
 When $\beta = 1$, *mvggd.m* becomes *mvnpdf.m*. Please direct any questions to blhanson@ucsd.edu. <br><br>
 
 ## References
-[1] L. Hanson, B., Zhao, M., & R. Bewley, T. (2025). An extensible framework for the probabilistic search of stochastically-moving targets characterized by generalized Gaussian distributions or  experimentally-defined regions of interest. Communications in Statistics - Theory and Methods, 1–26. https://doi.org/10.1080/03610926.2024.2439999
+[1] R. Van der Merwe "P-Point Kalman Filters for Probabilitic Inference in Dynamic State-Space Models" (Doctoral dissertation)
 
-![mvggd_2D](https://github.com/user-attachments/assets/13da27b3-b6f5-430d-9fb4-487800d598e9)
+![mssp_test](https://github.com/user-attachments/assets/74121144-be06-41b5-8d18-e676bba692f3)
