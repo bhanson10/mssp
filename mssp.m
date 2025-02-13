@@ -49,6 +49,8 @@ function [Sigma, Theta] = mssp(x, P, alpha, beta, kappa)
 %   References:
 %      R. Van der Merwe "P-Point Kalman Filters for Probabilitic 
 %      Inference in Dynamic State-Space Models" (Doctoral dissertation)
+%
+% Copyright 2025 by Benjamin L. Hanson, published under BSD 2-Clause License.
 
 if nargin < 1
     x     = 0; 
